@@ -13,25 +13,26 @@ export class DetailsPage implements OnInit {
     private galleryService: GalleryService
   ) {}
 
-  galleryIndex =0;
+  galleryIndex = 0;
   //On récupère toutes nos données selon l'index.
-  galleryDetails= this.galleryService.data[this.galleryIndex];
+  galleryDetails = this.galleryService.data[this.galleryIndex];
 
-  getData(){
+  // ------------------- ESSAI FAVORIS AVEC BOOLEAN ET SERVICE ---
+  pushFavorites() {
+    let params = { id: this.galleryIndex };
     this.activatedRoute.params.subscribe((params) => {
-      // console.log(params);
-      // console.log(params.id);
-      this.galleryIndex = this.galleryService.data.findIndex(item => item.id == params.id);
-      //console.log(this.galleryIndex);
-      //retourne l'objet récupéré par l'id :
-      this.galleryDetails = this.galleryService.data[this.galleryIndex];
-      // console.log(this.galleryService.data[this.galleryIndex]);
+      this.galleryService.changeBoolean(params);
     });
   }
-  getFavoris(){
 
+  getData() {
+    this.activatedRoute.params.subscribe((params) => {
+      this.galleryIndex = this.galleryService.data.findIndex(
+        (item) => item.id == params.id
+      );
+      this.galleryDetails = this.galleryService.data[this.galleryIndex];
+    });
   }
-
   ngOnInit() {
     this.getData();
   }

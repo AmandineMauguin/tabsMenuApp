@@ -3,8 +3,26 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Mail</ion-title>
+    <ion-title>Favorites</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+
+  <!-- ------------------------ ESSAI AVEC BOOLEAN ET SERVICE--------- -->
+  <ion-list>
+    <ng-container *ngFor="let img of galleryList">
+      <ion-item *ngIf="img.favorite" [routerLink]="'/tabs/favorites/' + img.id">
+        <ion-avatar slot="start">
+          <img [src]="img.url" />
+        </ion-avatar>
+        <ion-label>
+          <h1>{{img.title}}</h1>
+          <p>{{img.description}}</p>
+          <h5>Author: {{img.author}}</h5>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+

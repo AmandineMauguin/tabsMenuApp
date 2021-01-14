@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GalleryService {
+
   public data = [
     {
       id:0,
@@ -11,6 +12,7 @@ export class GalleryService {
       title:'X',
       author:'Me',
       description:'It\'s an X.',
+      favorite:false,
     },
     {
       id:1,
@@ -18,6 +20,7 @@ export class GalleryService {
       title:'Planets',
       author:'Me',
       description:'It has 3 planets on it. ',
+      favorite:false,
     },
     {
       id:2,
@@ -25,6 +28,7 @@ export class GalleryService {
       title:'Mushroom',
       author:'My cat',
       description:'BOOM.',
+      favorite:false,
     },
     {
       id:3,
@@ -32,6 +36,7 @@ export class GalleryService {
       title:'Pink&Blue',
       author:'Me',
       description:'Pick a boo.',
+      favorite:false,
     },
     {
       id:4,
@@ -39,6 +44,7 @@ export class GalleryService {
       title:'Thor',
       author:'Me',
       description:'It\'s a  blacksmith you know.',
+      favorite:false,
     },
     {
       id:5,
@@ -46,8 +52,15 @@ export class GalleryService {
       title:'Earth',
       author:'Me',
       description:'Or at least, it looks like it. ',
+      favorite:false,
     },
   ]
 
   constructor() { }
+  
+ 
+  changeBoolean(params){
+    this.data[params.id].favorite = !this.data[params.id].favorite;
+    
+  }
 }

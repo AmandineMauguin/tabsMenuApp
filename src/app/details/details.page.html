@@ -6,13 +6,15 @@
 </ion-header>
 
 <ion-content>
+  <!-- ------------------------ ESSAI AVEC BOOLEAN ET SERVICE--------- -->
   <ion-card expand="full" heigth="100px">
     <img width="100%" [src]="galleryDetails.url" />
     <ion-card-header>
       <ion-row>
         <ion-card-title>{{galleryDetails.title}}</ion-card-title>
         <ion-col></ion-col>
-        <ion-icon (click)="getFavoris()" style="zoom:2.0" class="ion-float-right" name="heart-outline"></ion-icon>
+        <ion-icon *ngIf="!galleryDetails.favorite" (click)="pushFavorites()" style="zoom:2.0" class="ion-float-right" name="heart-outline" color="dark" ></ion-icon>
+        <ion-icon *ngIf="galleryDetails.favorite" (click)="pushFavorites()" style="zoom:2.0" class="ion-float-right" name="heart" color="dark" ></ion-icon>
       </ion-row>
       
       <ion-card-subtitle >Author: {{galleryDetails.author}}</ion-card-subtitle>
@@ -24,4 +26,4 @@
     </ion-card-content>
   </ion-card>
 
-</ion-content>
+
