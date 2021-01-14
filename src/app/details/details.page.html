@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card expand="full" heigth="100px">
+    <img width="100%" [src]="galleryDetails.url" />
+    <ion-card-header>
+      <ion-row>
+        <ion-card-title>{{galleryDetails.title}}</ion-card-title>
+        <ion-col></ion-col>
+        <ion-icon (click)="getFavoris()" style="zoom:2.0" class="ion-float-right" name="heart-outline"></ion-icon>
+      </ion-row>
+      
+      <ion-card-subtitle >Author: {{galleryDetails.author}}</ion-card-subtitle>
+      
+      
+    </ion-card-header>
+    <ion-card-content>
+      {{galleryDetails.description}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
