@@ -61,6 +61,5 @@ export class GalleryService {
  
   changeBoolean(params){
     this.data[params.id].favorite = !this.data[params.id].favorite;
-    
   }
 }

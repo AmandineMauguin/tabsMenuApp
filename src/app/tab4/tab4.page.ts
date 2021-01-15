@@ -16,6 +16,9 @@ export class Tab4Page implements OnInit {
   galleryList = [];
 
 
+  // ionViewWillEnter(){
+  //   this.galleryList = this.galleryService.data;
+  // }
 
   ngOnInit() {
     this.galleryList = this.galleryService.data;

@@ -23,6 +23,7 @@ export class DetailsPage implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.galleryService.changeBoolean(params);
     });
+    console.log('blblblblblbl');
   }
 
   getData() {
@@ -33,6 +34,7 @@ export class DetailsPage implements OnInit {
       this.galleryDetails = this.galleryService.data[this.galleryIndex];
     });
   }
+
   ngOnInit() {
     this.getData();
   }
