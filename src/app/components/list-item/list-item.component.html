@@ -1,0 +1,12 @@
+<ion-list>
+    <ion-item *ngIf="img.favorite" [routerLink]="'/tabs/details/' + img.id">
+      <ion-avatar slot="start">
+        <img [src]="img.url" />
+      </ion-avatar>
+      <ion-label>
+        <h1>{{ img.title }}</h1>
+        <p>{{ img.description }}</p>
+        <h5>Author: {{ img.author }}</h5>
+      </ion-label>
+    </ion-item>
+</ion-list>

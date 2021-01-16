@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { GalleryService } from "../services/gallery.service";
 import { ActivatedRoute } from "@angular/router";
 
+
 @Component({
   selector: "app-tab4",
   templateUrl: "./tab4.page.html",

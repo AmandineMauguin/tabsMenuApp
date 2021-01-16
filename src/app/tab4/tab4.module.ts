@@ -8,6 +8,8 @@ import { Tab4PageRoutingModule } from './tab4-routing.module';
 
 import { Tab4Page } from './tab4.page';
 
+import { ListItemComponent } from '../components/list-item/list-item.component'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { Tab4Page } from './tab4.page';
     IonicModule,
     Tab4PageRoutingModule
   ],
-  declarations: [Tab4Page]
+  declarations: [Tab4Page, ListItemComponent]
 })
 export class Tab4PageModule {}
